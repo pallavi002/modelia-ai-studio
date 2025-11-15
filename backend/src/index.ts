@@ -11,7 +11,7 @@ import path from "path";
 dotenv.config();
 export const prisma = new PrismaClient();
 
-const app = express();
+export const app = express();
 app.use(cors());
 app.use(express.json());
 
