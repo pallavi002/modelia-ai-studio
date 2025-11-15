@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "ts-node-dev src/index.ts",
-  "build": "tsc",
-  "start": "node dist/index.js",
-  "test": "jest --runInBand --detectOpenHandles",
-  "test:coverage": "jest --coverage --runInBand"
-},
-
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest --runInBand --detectOpenHandles",
+    "test:coverage": "jest --coverage --runInBand",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write ."
+  },
   "dependencies": {
     "@prisma/client": "^5.0.0",
     "@types/multer": "^2.0.0",
@@ -26,7 +28,10 @@
   "jest": {
     "coverageDirectory": "coverage-backend",
     "collectCoverage": true,
-    "coverageReporters": ["lcov", "text"]
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -37,7 +42,13 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mongoose": "^5.11.96",
     "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "jest": "^29.7.0",
+    "prettier": "^3.6.2",
     "prisma": "^5.0.0",
     "supertest": "^7.1.4",
     "ts-jest": "^29.4.5",
