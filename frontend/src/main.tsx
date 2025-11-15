@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Studio from "./pages/Studio";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/Protectedroute";
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -23,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 );
 
 function NavigateToLogin() {
-  return <div className="min-h-screen flex items-center justify-center">
+  return <div className="min-h-screen flex items-center justify-center p-5 m-5">
     <div>
       <a href="/login" className="text-gray-800 underline">Go to Login</a>
     </div>

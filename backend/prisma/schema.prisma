@@ -8,10 +8,23 @@ datasource db {
 }
 
 model User {
+  id          Int          @id @default(autoincrement())
+  email       String       @unique
+  password     String
+  name         String?
+  createdAt    DateTime     @default(now())
+  generations Generation[]
+}
+
+model Generation {
   id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  name      String?
+  userId    Int
+  prompt    String
+  style     String
+  imageUrl  String
+  status    String   @default("completed")
   createdAt DateTime @default(now())
-  // add relations later (generations)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
