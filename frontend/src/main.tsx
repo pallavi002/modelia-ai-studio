@@ -3,10 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
+import Studio from "./pages/Studio";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/Protectedroute";
-// placeholder studio page
-const Studio = () => <div className="p-6">Studio page — protected</div>;
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

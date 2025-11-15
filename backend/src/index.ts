@@ -3,6 +3,7 @@ import cors from "cors";
 import { PrismaClient } from "@prisma/client";
 import dotenv from "dotenv";
 import { authRouter } from "./routes/auth";
+import generateRoute from "./routes/generate";
 
 dotenv.config();
 export const prisma = new PrismaClient();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/auth", authRouter);
+app.use("/api/generate", generateRoute);
 
 app.get("/", (_req, res) => res.json({ ok: true }));
 
